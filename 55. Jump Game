@@ -1,0 +1,24 @@
+class Solution {
+    public boolean canJump(int[] nums) {
+        int n = nums.length-1;
+
+         int first = 0;
+    
+        int last = nums.length;
+        int maxrich = 0;
+
+        while( first < last ){
+            if( first > maxrich ){
+                return false;
+            }
+              
+            maxrich =  Math.max(maxrich, first + nums[first]);
+               first++;
+            if(maxrich >= n){
+                return true;
+            }
+            
+        }
+        return true;
+    }
+}
