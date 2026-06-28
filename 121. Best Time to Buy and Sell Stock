@@ -1,0 +1,19 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        
+        int start  = 0 ;
+        int end = prices.length;
+        int minprise = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        
+        while(start<end){
+            if (prices[start] < minprise){  // buy 
+                  minprise = prices[start];
+            }else if( prices[start] - minprise > maxprofit){
+                   maxprofit = prices[start] - minprise;
+            }
+            start++;
+        }
+        return maxprofit;
+    }
+}
